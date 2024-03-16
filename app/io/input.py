@@ -11,4 +11,4 @@ def input_file(filename: str):
 
 
 def input_file_pandas(filename: str):
-    return pd.read_csv(filename)
+    return pd.read_csv(filename).to_string()
