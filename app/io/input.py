@@ -47,7 +47,9 @@ def input_file_pandas(filename: str):
         ValueError: if filename is invalid
         FileNotFoundError: if the file does not exist
     """
+    # I could not a normal way to read text from a .txt file using pandas, only this one,
+    # but it works poorly
     if not isinstance(filename, str):
         raise ValueError("Filename must be a string.")
 
-    return pd.read_csv(filename).to_string()
+    return pd.read_csv(filename, header=None, names=['Text']).to_string()
